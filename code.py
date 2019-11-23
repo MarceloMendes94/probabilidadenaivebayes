@@ -1,3 +1,4 @@
+
 class Titanic():
     def __init__(self):
         self.analise_classe_social = {'ticket_especial_morto':0, 'ticket_especial_vivo':0, 'ticket_caro_morto':0, 'ticket_caro_vivo':0, 'ticket_medio_morto':0, 'ticket_medio_vivo':0, 'ticket_barato_morto':0, 'ticket_barato_vivo':0 }
@@ -115,16 +116,19 @@ class Titanic():
     def dado_mulher_estar_morto(self):
         return None
 
+def menu():
+    opcao=3
+    t = Titanic()
+    while opcao==1 or opcao==2 or opcao==3:
+        print (' 1-Analise por sexo \n 2-Analise por Classe social \n 3-Analise por idade')
+        opcao = int(input('Digite a opcão desejada '))
+        print(opcao)
+        if opcao==1:
+            print(t.analise_sexo)
+        elif opcao==2:
+            print(t.analise_classe_social)
+        elif opcao==3:
+            print(t.analise_idade)
+        print('\n\n\n\n')
 
-t = Titanic()
-print(t.total_vivo+t.total_morto)
-print(t.analise_idade)
-
-
-print('Analise de classe social')
-count=0
-for elem in t.analise_classe_social:
-    print(elem)
-    print(t.analise_classe_social[elem])
-    count=count+t.analise_classe_social[elem]
-print(count)    
+menu()
